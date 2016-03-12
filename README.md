@@ -52,4 +52,9 @@ For the page to be up & running successfully, the `./add.js`, `jquery.js` file w
 
 In addition, the [my-page.html](https://github.com/lasso-js-samples/lasso-config/blob/master/my-page.html) file will be updated with the required `<script>` and `<link>` tags to include the required external resources.
 
-To test your program, open the updated `./my-page.html` file in your web browser.
+The complete configuration of lasso js is available at [Lasso JS configuration](https://github.com/lasso-js/lasso#configuration)
+
+
+#### How to test the lassoed result of my-page.html ?
+
+To test, open the updated `./my-page.html` file in your web browser.
