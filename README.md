@@ -38,7 +38,7 @@ To run this example, navigate to the project root on your terminal and type
 The configuration file to run lasso is `./lasso-config.json`.
 Running the above command will result in JavaScript and CSS bundles being written out to the `./static` directory.
 
-The dependencies required to build this page via Lasso is mentioned inside the *dependencies* key of the `./my-page.browser.json`. This file lists `./main.js` and `./style.less` as the two files required for this page.
+The dependencies required to build this page via Lasso is mentioned inside the `dependencies` key of the `./my-page.browser.json`. This file lists `./main.js` and `./style.less` as the two files required for this page.
 
 **Other configuration options :**
 
