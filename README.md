@@ -33,6 +33,38 @@ To run this example, navigate to the project root on your terminal and type
 ./run.sh
 ```````````
 
+You should see an output similar to the one below :
+
+````````````
+Optimizing page "my-page"...
+Successfully lassoed page "my-page"!
+````````````
+````````````
+------------------------------------
+````````````
+````````````
+Output for page "my-page":
+  Resource bundle files:
+    static/math.js
+    static/jquery.js
+    static/my-page.js
+    static/my-page.css
+  HTML slots file:
+    build/my-page.html.json
+  Updated HTML file:
+    my-page.html
+````````````
+````````````
+------------------------------------
+````````````
+````````````
+All pages successfully built!
+````````````
+````````````
+Open './my-page.html' to see the result!
+````````````
+
+
 #### What is the contents of the configuration file ?
 
 The configuration file to run lasso is `./lasso-config.json`.
