@@ -40,15 +40,15 @@ Running the above command will result in JavaScript and CSS bundles being writte
 
 The dependencies required to build this page via Lasso is mentioned inside the *dependencies* key of the `./my-page.browser.json`. This file lists `./main.js` and `./style.less` as the two files required for this page.
 
-*Other configuration options :*
+**Other configuration options :**
 
-For the page to be up & running successfully, the `./add.js`, `jquery.js` file which is mentioned as a dependency for `main.js` must also be bundled. This is mentioned in the **bundles** property of the `./lasso-config.json.`
+For the page to be up & running successfully, the `./add.js`, `jquery.js` file which is mentioned as a dependency for `main.js` must also be bundled. This is mentioned in the `bundles` property of the `./lasso-config.json.`
 
-* minify is used to minify the scripts
+* `minify` is used to minify the scripts
 
-* fingerprintsEnabled is used to provide a unique [fingerprinted](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching) URL.
+* `fingerprintsEnabled` is used to provide a unique [fingerprinted](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching) URL.
 
-* plugins is used to list [lasso-less](https://github.com/lasso-js/lasso-less) plugin to compile .less dependencies into CSS files.
+* `plugins` is used to list [lasso-less](https://github.com/lasso-js/lasso-less) plugin to compile .less dependencies into CSS files.
 
 In addition, the [my-page.html](https://github.com/lasso-js-samples/lasso-config/blob/master/my-page.html) file will be updated with the required `<script>` and `<link>` tags to include the required external resources.
 
