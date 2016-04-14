@@ -1,14 +1,14 @@
 {
-
     "plugins": [
-        "lasso-less"
+        "lasso-less" /* Unable preprocessing for Less files */
     ],
-    "outputDir": "static",
-    "fingerprintsEnabled": true,
-    "minify": true,
-    "resolveCssUrls": true,
-    "bundlingEnabled": true,
-    "bundles": [
+    "outputDir": "build/static/", /* Output directory for all generated assets */
+    "urlPrefix": "/static", /* Prefix added to all generated URLs */
+    "fingerprintsEnabled": true, /* Add a fingerprint to the generated resource URL (changes when file changes)
+    "minify": true, /* Minify JavaScript and CSS */
+    "resolveCssUrls": true, /* Resolve resource URLs found in CSS fils */
+    "bundlingEnabled": true, /* Concatenate resources together */
+    "bundles": [ /* Preconfigured bundles */
         {
             "name": "jquery",
             "dependencies": [
@@ -18,7 +18,7 @@
         {
             "name": "math",
             "dependencies": [
-                "require: ./add"
+                "require: ./src/add"
             ]
         }
     ]

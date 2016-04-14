@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "./run.sh"
   },
   "author": "",
   "license": "ISC",
@@ -13,8 +13,9 @@
     "url": "https://github.com/lasso-js-samples/lasso-config.git"
   },
   "dependencies": {
-    "jquery": "^2.1.1",
-    "lasso-cli": "^1.1.10",
-    "lasso-less": "^2.1.1"
+    "http-server": "^0.9.0",
+    "jquery": "^2.2.3",
+    "lasso-cli": "^2.0.5",
+    "lasso-less": "^2.1.2"
   }
 }

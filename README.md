@@ -1,16 +1,16 @@
 # lasso-config
 
-#### What does this example do ?
+# Overview
 
-> This example project is to explain how to use a config file for [Lasso JS](https://github.com/lasso-js/lasso)
+This example project is to explain how to use a configuration file with the Lasso.js command line interface.
 
-#### What is Lasso JS ?
+# What is Lasso.js?
 
-[Lasso JS](https://github.com/lasso-js/lasso) is an eBay open source Node.js-style JavaScript module bundler that also provides first-level support for optimally delivering JavaScript, CSS, images and other assets to the browser.
+[Lasso.js](https://github.com/lasso-js/lasso) is an eBay open source Node.js-style JavaScript module bundler and asset pipeline that also provides first-level support for optimally delivering JavaScript, CSS, images and other assets to the browser.
 
-This tool offers many different optimizations such as a bundling, code splitting, lazy loading, conditional dependencies, compression, JS / CSS / IMG minifications, Base64 image encoding, and fingerprinted resource URLs. Plugins are provided to support pre-processors and compilers such as Less, Stylus and [Marko](http://markojs.com).
+This tool offers many different optimizations such as a bundling, code splitting, lazy loading, conditional dependencies, compression, JS/CSS/IMG minification, Base64 image encoding, and fingerprinted resource URLs. Plugins are provided to support pre-processors and compilers such as Less, Stylus and [Marko](http://markojs.com).
 
-#### How to install this ?
+# Install
 
 ```bash
 git clone https://github.com/lasso-js-samples/lasso-config.git
@@ -24,69 +24,47 @@ This sample app uses a local installation of the [lasso-cli](https://github.com/
 npm install lasso-cli --global
 ```
 
-#### How to run this example ?
+# Run
 
-To run this example, navigate to the project root on your terminal and type
+```bash
+npm start
+```
 
-```````````
+Open `http://localhost:8080` in your web browser to test out your page.
 
-./run.sh
-```````````
+# Additional information
 
-You should see an output similar to the one below :
+_lasso-config.json:_
 
-````````````
-Optimizing page "my-page"...
-Successfully lassoed page "my-page"!
-````````````
-````````````
-------------------------------------
-````````````
-````````````
-Output for page "my-page":
-  Resource bundle files:
-    static/math.js
-    static/jquery.js
-    static/my-page.js
-    static/my-page.css
-  HTML slots file:
-    build/my-page.html.json
-  Updated HTML file:
-    my-page.html
-````````````
-````````````
-------------------------------------
-````````````
-````````````
-All pages successfully built!
-````````````
-````````````
-Open './my-page.html' to see the result!
-````````````
-
-
-#### What is the contents of the configuration file ?
+```javascript
+{
+    "plugins": [
+        "lasso-less" /* Unable preprocessing for Less files
+    ],
+    "outputDir": "build/static/", /* Output directory for all generated assets */
+    "urlPrefix": "/static", /* Prefix added to all generated URLs */
+    "fingerprintsEnabled": true, /* Add a "fingerprint" to the generated resource URL (changes when file changes)
+    "minify": true, /* Minify JavaScript and CSS */
+    "resolveCssUrls": true, /* Resolve resource URLs found in CSS fils */
+    "bundlingEnabled": true, /* Concatenate resources together */
+    "bundles": [ /* Preconfigured bundles */
+        {
+            "name": "jquery",
+            "dependencies": [
+                "require: jquery"
+            ]
+        },
+        {
+            "name": "math",
+            "dependencies": [
+                "require: ./src/add"
+            ]
+        }
+    ]
+}
+```
 
 The configuration file to run lasso is `./lasso-config.json`.
 Running the above command will result in JavaScript and CSS bundles being written out to the `./static` directory.
 
-The dependencies required to build `./my-page.html` via Lasso is mentioned inside the `dependencies` key of the `./my-page.browser.json`. This file lists `./main.js` and `./style.less` as the two files required for this page.
-
-**Other configuration options :**
-
-For the page to be up & running successfully, the `./add.js`, `jquery.js` file which is mentioned as a dependency for `main.js` must also be bundled. This is mentioned in the `bundles` property of the `./lasso-config.json.`
-
-* `minify` is used to minify the scripts
-
-* `fingerprintsEnabled` is used to provide a unique [fingerprinted](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching) URL.
-
-* `plugins` is used to list [lasso-less](https://github.com/lasso-js/lasso-less) plugin to compile .less dependencies into CSS files.
-
-In addition, the [my-page.html](https://github.com/lasso-js-samples/lasso-config/blob/master/my-page.html) file will be updated with the required `<script>` and `<link>` tags to include the required external resources.
-
-The complete configuration of lasso js is available at [Lasso JS configuration](https://github.com/lasso-js/lasso#configuration)
-
-
-#### How to test the lassoed result of my-page.html ?
-
-To test, open the updated `./my-page.html` file in your web browser.
+The JavaScript and CSS dependencies for `src/index.html` are declared in `src/browser.json`.
